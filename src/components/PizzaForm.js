@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 
-function PizzaForm() {
+function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
+
+  // console.log(currentPizza)
+
+  function handleChange(e) {
+    setCurrentPizza({...currentPizza,
+    [e.target.name]: e.target.value
+    })
+  }
+
   return (
-    <form onSubmit={null /*handle that submit*/}>
+    <form onSubmit={(e) => handleSubmit(e, currentPizza)}>
       <div className="form-row">
         <div className="col-5">
           <input
@@ -10,6 +19,8 @@ function PizzaForm() {
             type="text"
             name="topping"
             placeholder="Pizza Topping"
+            value={currentPizza.topping}
+            onChange={handleChange}
           />
         </div>
         <div className="col">
