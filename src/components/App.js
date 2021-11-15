@@ -16,7 +16,7 @@ function App() {
     fetch(`http://localhost:3001/pizzas`)
     .then(r => r.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
       setPizzas(data)
     })
   }, [])
@@ -36,7 +36,6 @@ function App() {
     })
     .then(r => r.json())
     .then(data => {
-      console.log(data)
       const updatedPizzas = pizzas.map(pizzaInList => {
         if (pizzaInList.id === pizza.id) {
           return pizza

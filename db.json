@@ -8,8 +8,8 @@
     },
     {
       "id": 2,
-      "topping": "Pepperoni",
-      "size": "Small",
+      "topping": "Pepperoni Bell Pepper",
+      "size": "Medium",
       "vegetarian": false
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": 5,
       "topping": "Bacon",
-      "size": "Medium",
+      "size": "Large",
       "vegetarian": false
     },
     {
@@ -46,7 +46,7 @@
       "id": 8,
       "topping": "Pineapple and Ham",
       "size": "Medium",
-      "vegetarian": true
+      "vegetarian": false
     },
     {
       "id": 9,
@@ -58,7 +58,7 @@
       "id": 10,
       "topping": "Chicken",
       "size": "Large",
-      "vegetarian": true
+      "vegetarian": false
     }
   ]
 }

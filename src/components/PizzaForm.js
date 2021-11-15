@@ -1,13 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
-
-  console.log(currentPizza)
 
   function handleChange(e) {
     if (e.target.name === 'vegetarian') {
       setCurrentPizza({...currentPizza,
-        [e.target.name]: !e.target.checked
+        [e.target.name]: !currentPizza.vegetarian
         })
     }
     else {
@@ -15,7 +13,6 @@ function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
         [e.target.name]: e.target.value
         })
     }
-    console.log(e.target.name, e.target.value)
   }
 
   return (
