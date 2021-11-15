@@ -22,13 +22,11 @@ function App() {
   }, [])
 
   function handleEdit (pizza) {
-    console.log(pizza)
     setCurrentPizza(pizza)
   }
 
   function handleSubmit (e, pizza) {
     e.preventDefault()
-    console.log(pizza)
     fetch(`http://localhost:3001/pizzas/${pizza.id}`, {
       method: "PATCH",
       headers: {

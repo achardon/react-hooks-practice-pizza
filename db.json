@@ -15,7 +15,7 @@
     {
       "id": 3,
       "topping": "Mushroom and Kale",
-      "size": "Small",
+      "size": "Medium",
       "vegetarian": true
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "id": 8,
-      "topping": "Pineapple",
+      "topping": "Pineapple and Ham",
       "size": "Medium",
       "vegetarian": true
     },

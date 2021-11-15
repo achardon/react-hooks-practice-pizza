@@ -1,13 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 
 function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
 
-  // console.log(currentPizza)
+  console.log(currentPizza)
 
   function handleChange(e) {
-    setCurrentPizza({...currentPizza,
-    [e.target.name]: e.target.value
-    })
+    if (e.target.name === 'vegetarian') {
+      setCurrentPizza({...currentPizza,
+        [e.target.name]: !e.target.checked
+        })
+    }
+    else {
+      setCurrentPizza({...currentPizza,
+        [e.target.name]: e.target.value
+        })
+    }
+    console.log(e.target.name, e.target.value)
   }
 
   return (
@@ -24,7 +32,7 @@ function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
           />
         </div>
         <div className="col">
-          <select className="form-control" name="size">
+          <select className="form-control" name="size" value ={currentPizza.size} onChange={handleChange}>
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
@@ -37,6 +45,8 @@ function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
               type="radio"
               name="vegetarian"
               value="Vegetarian"
+              checked={currentPizza.vegetarian? true: false}
+              onChange={handleChange}
             />
             <label className="form-check-label">Vegetarian</label>
           </div>
@@ -46,6 +56,8 @@ function PizzaForm( {currentPizza, setCurrentPizza, handleSubmit} ) {
               type="radio"
               name="vegetarian"
               value="Not Vegetarian"
+              checked={currentPizza.vegetarian? false: true}
+              onChange={handleChange}
             />
             <label className="form-check-label">Not Vegetarian</label>
           </div>
